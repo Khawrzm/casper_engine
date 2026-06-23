@@ -1,3 +1,8 @@
+# Technical Specifications
+
+## Overview
+Sovereign AI Infrastructure - Zero Telemetry - Local-First C11/Rust Stack.
+
 # Technical Documentation
 
 ## Overview
