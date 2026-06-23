@@ -1,8 +1,30 @@
+# Technical Documentation
+
+## Overview
+This repository is part of the KHAWRIZM Sovereign Technology Stack.
+
+## Core Focus
+- Sovereign AI Systems
+- Zero Telemetry
+- Cryptographic Verification
+- Supply Chain Security
+
+# Technical Specifications
+
+## Overview
+[Add architectural summary here]
+
+## Core Components
+- Neural-Symbolic Hybrid Architecture
+- Deterministic Proof Verification
+- Offline-First Execution
+
+# Technical Documentation
+
 # Casper Engine
 
 **NIYAH — Sovereign Hybrid Neuro-Symbolic Inference Engine**
 
-> نحن ورثة الخوارزمي — لا يوجد مستحيل في الدنيا
 > *We are the heirs of Al-Khwarizmi — nothing is impossible.*
 
 A from-scratch C11 inference and training engine that fuses a Transformer neural core with a symbolic reasoning layer, cryptographic proof generation, and constraint solving. Zero external dependencies. Runs on $35 hardware.
@@ -387,8 +409,18 @@ judge-gated kernel defense & active-response framework. KSpike embeds the
 as the ethical kernel of its Judge layer, and will delegate contextual
 adjudication to Casper Engine over FFI in v0.2.
 
-- 🧠 [Casper Engine](https://github.com/Grar00t/Casper_Engine) — hybrid neuro-symbolic reasoning (C11, zero-deps).
-- 🛡️ [KSpike](https://github.com/Grar00t/kspike) — Casper-governed kernel defense (Rust).
+-  [Casper Engine](https://github.com/Grar00t/Casper_Engine) — hybrid neuro-symbolic reasoning (C11, zero-deps).
+-  [KSpike](https://github.com/Grar00t/kspike) — Casper-governed kernel defense (Rust).
 - 🧬 [haven-niyah-engine](https://github.com/Grar00t/haven-niyah-engine) — Arabic-first three-lobe LLM.
 - 🌐 [k-forge](https://github.com/Grar00t/k-forge) — P2P, crypto-signed VCS.
 - 💻 [khawrizm-os](https://github.com/Grar00t/khawrizm-os) — Sovereign ARM64 Linux.
+
+## Supply Chain Security Integration
+
+This project is being aligned with **OpenSSF** best practices:
+
+- OpenSSF Scorecard integration (planned)
+- SLSA provenance for builds (in progress)
+- Sigstore (Cosign) signing for releases (planned)
+
+All inference outputs include cryptographic proof (`NIYAH-PROOF-V1`) for auditability.
