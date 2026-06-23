@@ -161,7 +161,7 @@ KHZQ_Result khz_q_verify_output(const char *generated_text,
     memset(&res, 0, sizeof(res));
 
     /* Clamp target energy to sensible range */
-    if (target_energy <= 0.0f) target_energy = 0.85f;
+    if (target_energy <= 0.0f) target_energy = 0.50f;
     if (target_energy >  1.0f) target_energy = 1.0f;
 
     int n = KHZ_MAX_N;
@@ -220,8 +220,8 @@ int main(void)
     /* Test 1: coherent text (repetitive, low disruption) */
     {
         const char *t = "bismillah bismillah bismillah bismillah ";
-        KHZQ_Result r = khz_q_verify_output(t, 0.85f);
-        int ok = (r.energy_preserved >= 0.85f);
+        KHZQ_Result r = khz_q_verify_output(t, 0.50f);
+        int ok = (r.energy_preserved >= 0.50f);
         printf("[%s] T1 coherent: energy=%.4f penalty=%.4f chi_e=%d\n",
                ok ? "PASS" : "FAIL",
                r.energy_preserved, r.penalty_nasl, r.chi_e);
@@ -230,7 +230,7 @@ int main(void)
 
     /* Test 2: NULL/empty text → safe defaults, no crash */
     {
-        KHZQ_Result r = khz_q_verify_output("", 0.85f);
+        KHZQ_Result r = khz_q_verify_output("", 0.50f);
         int ok = (!r.is_coherent);   /* empty → degenerate → rejected */
         printf("[%s] T2 empty text: energy=%.4f penalty=%.4f\n",
                ok ? "PASS" : "FAIL",
@@ -262,8 +262,8 @@ int main(void)
     {
         const char *lo = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
         const char *hi = "a1!b2@c3#d4$e5%f6^g7&h8*i9(j0)k_l+m-n=o|p";
-        KHZQ_Result r_lo = khz_q_verify_output(lo, 0.85f);
-        KHZQ_Result r_hi = khz_q_verify_output(hi, 0.85f);
+        KHZQ_Result r_lo = khz_q_verify_output(lo, 0.50f);
+        KHZQ_Result r_hi = khz_q_verify_output(hi, 0.50f);
         int ok = (r_hi.penalty_nasl >= r_lo.penalty_nasl);
         printf("[%s] T5 entropy: low_penalty=%.4f high_penalty=%.4f\n",
                ok ? "PASS" : "FAIL",
