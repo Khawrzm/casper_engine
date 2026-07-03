@@ -1,46 +1,46 @@
-                ┌───────────────────────────────────┐         Hybrid CLI               │
-                │   (niyah_hybrid_main.c)           │
-                └──────────┬──────────────────┬─────┘
-                           │                  │
-          ┌──────────────▼──┐┌──────────────▼──────────┐  Neural Core  │    │  Symbolic Reasoner  │
-          │ (niyah_core)  │    │ (hybrid_reasoner)   │
-          │               │    │                     │
-          │  Transformer  │    │  Unification        │
-          │  GQA Attn     │    │  Backward Chaining  │
-          │  SwiGLU FFN   │    │  Knowledge Base     │
-          │  RoPE         │    └──────────┬──────────┘
-          │  RMSNorm      │             │
-          │  SIMD Kernels │    ┌──────────────▼──────────┐    ┌──────────┬──────────┐    │  Constraint Solver  │
-                  │            │  (constraint_solver) │
-                  │            │  Rational Arithmetic │
-          ┌────────▼────────┐  │  Bounds Propagation │
-          │   Tokenizer   │    └──────────┬──────────┘
-          │   (UTF-8)     │             │
-          └────────┬────────┘    ┌──────────────▼──────────┐            │   Rule Parser       │
-                  ▼            │   (.nrule format)   │
-            ┌──────────┐    └──────────┬──────────┘
-            │  Output   │               │
-            │  Text     │◀──────────────┘
-            └─────┬─────┘        Verify & Enforce
-                  │
-          ┌────────▼────────┐ Proof Generator│
-          │  SHA-256 Hash  │
-          │  Audit Trail   │
-          └─────────────────┘
+﻿                â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”         Hybrid CLI               â”‚
+                â”‚   (niyah_hybrid_main.c)           â”‚
+                â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”˜
+                           â”‚                  â”‚
+          â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â–¼â”€â”€â”â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â–¼â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”  Neural Core  â”‚    â”‚  Symbolic Reasoner  â”‚
+          â”‚ (niyah_core)  â”‚    â”‚ (hybrid_reasoner)   â”‚
+          â”‚               â”‚    â”‚                     â”‚
+          â”‚  Transformer  â”‚    â”‚  Unification        â”‚
+          â”‚  GQA Attn     â”‚    â”‚  Backward Chaining  â”‚
+          â”‚  SwiGLU FFN   â”‚    â”‚  Knowledge Base     â”‚
+          â”‚  RoPE         â”‚    â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+          â”‚  RMSNorm      â”‚             â”‚
+          â”‚  SIMD Kernels â”‚    â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â–¼â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”    â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”    â”‚  Constraint Solver  â”‚
+                  â”‚            â”‚  (constraint_solver) â”‚
+                  â”‚            â”‚  Rational Arithmetic â”‚
+          â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â–¼â”€â”€â”€â”€â”€â”€â”€â”€â”  â”‚  Bounds Propagation â”‚
+          â”‚   Tokenizer   â”‚    â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+          â”‚   (UTF-8)     â”‚             â”‚
+          â””â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”˜    â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â–¼â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”            â”‚   Rule Parser       â”‚
+                  â–¼            â”‚   (.nrule format)   â”‚
+            â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”    â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+            â”‚  Output   â”‚               â”‚
+            â”‚  Text     â”‚â—€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+            â””â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”˜        Verify & Enforce
+                  â”‚
+          â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â–¼â”€â”€â”€â”€â”€â”€â”€â”€â” Proof Generatorâ”‚
+          â”‚  SHA-256 Hash  â”‚
+          â”‚  Audit Trail   â”‚
+          â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
 
 ### Design Principles
 
-- **Zero dependencies** — libc + libm only. No OpenSSL, no Boost, no BLAS.
-- **Single-pool allocation** — one `malloc`, zero fragmentation, deterministic teardown.
-- **SIMD everywhere** — AVX2+FMA (x86_64), NEON (aarch64), scalar fallback. Compile-time selection.
-- **C11 clean** — compiles with `-Wall -Wextra -Werror -pedantic`. C++17 compatible headers.
-- **Offline-first** — no network calls, no telemetry, no cloud. Fully sovereign.
+- **Zero dependencies** â€” libc + libm only. No OpenSSL, no Boost, no BLAS.
+- **Single-pool allocation** â€” one `malloc`, zero fragmentation, deterministic teardown.
+- **SIMD everywhere** â€” AVX2+FMA (x86_64), NEON (aarch64), scalar fallback. Compile-time selection.
+- **C11 clean** â€” compiles with `-Wall -Wextra -Werror -pedantic`. C++17 compatible headers.
+- **Offline-first** â€” no network calls, no telemetry, no cloud. Fully sovereign.
 
 ---
 
 ## Features
 
-### Neural Core (`niyah_core.c` — 809 lines)
+### Neural Core (`niyah_core.c` â€” 809 lines)
 - Transformer decoder with Grouped-Query Attention (GQA)
 - SwiGLU feed-forward network with configurable multiplier
 - Rotary Position Embeddings (RoPE) with adjustable theta
@@ -50,39 +50,39 @@
 - Top-p (nucleus) sampling with temperature control
 - Model serialization to `.bin` format (64-byte header)
 
-### Symbolic Reasoner (`hybrid_reasoner.c` — 801 lines)
+### Symbolic Reasoner (`hybrid_reasoner.c` â€” 801 lines)
 - First-order logic terms: atoms, variables, compound terms
 - Robinson's unification algorithm with occurs check
 - Backward chaining (Prolog-style) with configurable depth limit
 - Knowledge base with clause indexing
 - Variable renaming for clause isolation
 
-### Constraint Solver (`constraint_solver.c` — 479 lines)
+### Constraint Solver (`constraint_solver.c` â€” 479 lines)
 - Exact rational arithmetic (int64 numerator/denominator)
-- Linear inequality constraints (≤, ≥, =)
+- Linear inequality constraints (â‰¤, â‰¥, =)
 - Bounds propagation solver with iterative tightening
 - Integrates with the symbolic reasoner to prune impossible bindings
 
-### Rule Parser (`rule_parser.c` — 604 lines)
+### Rule Parser (`rule_parser.c` â€” 604 lines)
 - Human-readable `.nrule` format for output verification
 - Recursive descent parser
 - Supports: `IF`/`THEN`, `ALWAYS`, `CONTAINS`, `EQUALS`, `NOT_EQUALS`, `AND`, `REJECTED`, `MUST contain`
 - Case-insensitive matching
-- Sequence-level verification: generate full response → decode → verify → re-sample if violated
+- Sequence-level verification: generate full response â†’ decode â†’ verify â†’ re-sample if violated
 
-### Proof Generator (`proof_generator.c` — 402 lines)
-- Public-domain SHA-256 (FIPS 180-4) — no OpenSSL dependency
-- Proof hash: `SHA-256(prompt ‖ output ‖ rule_file_contents)`
+### Proof Generator (`proof_generator.c` â€” 402 lines)
+- Public-domain SHA-256 (FIPS 180-4) â€” no OpenSSL dependency
+- Proof hash: `SHA-256(prompt â€– output â€– rule_file_contents)`
 - Machine-verifiable `.proof` file format (NIYAH-PROOF-V1)
 - Offline audit trail for every inference
 
 ### SIMD Kernels
 | Operation | AVX2+FMA | NEON | Scalar |
 |-----------|----------|------|--------|
-| RMSNorm   | ✓        | ✓    | ✓      |
-| MatVec    | ✓        | ✓    | ✓      |
-| SwiGLU    | ✓        | ✓    | ✓      |
-| Softmax   | ✓        | ✓    | ✓      |
+| RMSNorm   | âœ“        | âœ“    | âœ“      |
+| MatVec    | âœ“        | âœ“    | âœ“      |
+| SwiGLU    | âœ“        | âœ“    | âœ“      |
+| Softmax   | âœ“        | âœ“    | âœ“      |
 
 ---
 
@@ -112,9 +112,9 @@ gcc -O2 -std=c11 -Wall -Wextra -Werror \
 ./niyah_hybrid --smoke
 # Casper Engine
 
-**NIYAH — Sovereign Hybrid Neuro-Symbolic Inference Engine**
+**NIYAH â€” Sovereign Hybrid Neuro-Symbolic Inference Engine**
 
-> *We are the heirs of Al-Khwarizmi — nothing is impossible.*
+> *We are the heirs of Al-Khwarizmi â€” nothing is impossible.*
 
 A from-scratch C11 inference and training engine that fuses a Transformer neural core with a symbolic reasoning layer, cryptographic proof generation, and constraint solving. Zero external dependencies. Runs on $35 hardware.
 
@@ -142,13 +142,13 @@ Hybrid Inference
 The hybrid engine generates text with the neural Transformer, then verifies the output against symbolic rules before returning it.
 
 Flow
-Encode — tokenize prompt (UTF-8, Arabic-aware)
-Generate — autoregressive forward pass with KV-cache
-Decode — detokenize to candidate text
-Verify — check against .nrule constraints
-Re-sample — if violated, adjust seed and retry (up to max_retries)
-Prove — compute SHA-256 proof hash over (prompt, output, rules)
-Return — verified output + proof
+Encode â€” tokenize prompt (UTF-8, Arabic-aware)
+Generate â€” autoregressive forward pass with KV-cache
+Decode â€” detokenize to candidate text
+Verify â€” check against .nrule constraints
+Re-sample â€” if violated, adjust seed and retry (up to max_retries)
+Prove â€” compute SHA-256 proof hash over (prompt, output, rules)
+Return â€” verified output + proof
 Usage
 # Interactive mode with rules
 ./niyah_hybrid --model model.bin --rules safety.nrule --interactive
@@ -173,25 +173,25 @@ output_hash: c9d0e1f2...
 rules_hash: 34567890...
 timestamp: 2026-04-09T12:00:00Z
 casper_engine/
-├── Core_CPP/                    # Engine source code
-│   ├── niyah_core.h             # Public API header (189 lines)
-│   ├── niyah_core.c             # Neural Transformer engine (809 lines)
-│   ├── hybrid_reasoner.h/c      # Symbolic reasoner (949 lines)
-│   ├── constraint_solver.h/c    # Linear constraint solver (575 lines)
-│   ├── rule_parser.h/c          # .nrule format parser (723 lines)
-│   ├── proof_generator.h/c      # SHA-256 + proof system (466 lines)
-│   ├── niyah_hybrid_main.c      # Hybrid CLI entrypoint (434 lines)
-│   ├── niyah_main.c             # Neural-only smoke test (18 lines)
-│   ├── niyah_train.c            # Standalone trainer (186 lines)
-│   └── bench_niyah.c            # Benchmarking harness (223 lines)
-├── tokenizer.c                  # UTF-8 tokenizer with encode/decode (186 lines)
-├── Data_Training/               # Training datasets
-├── Math_ASM/                    # Assembly experiments (AVX)
-├── UI_CSharp/                   # Optional C# manager UI
-└── scripts/                     # Build & automation
-    ├── build_gcc.sh             # GCC/Clang build (Linux/macOS)
-    ├── build_msvc.ps1           # MSVC build (Windows)
-    └── niyah.ps1                # Unified PowerShell wrapper
+â”œâ”€â”€ Core_CPP/                    # Engine source code
+â”‚   â”œâ”€â”€ niyah_core.h             # Public API header (189 lines)
+â”‚   â”œâ”€â”€ niyah_core.c             # Neural Transformer engine (809 lines)
+â”‚   â”œâ”€â”€ hybrid_reasoner.h/c      # Symbolic reasoner (949 lines)
+â”‚   â”œâ”€â”€ constraint_solver.h/c    # Linear constraint solver (575 lines)
+â”‚   â”œâ”€â”€ rule_parser.h/c          # .nrule format parser (723 lines)
+â”‚   â”œâ”€â”€ proof_generator.h/c      # SHA-256 + proof system (466 lines)
+â”‚   â”œâ”€â”€ niyah_hybrid_main.c      # Hybrid CLI entrypoint (434 lines)
+â”‚   â”œâ”€â”€ niyah_main.c             # Neural-only smoke test (18 lines)
+â”‚   â”œâ”€â”€ niyah_train.c            # Standalone trainer (186 lines)
+â”‚   â””â”€â”€ bench_niyah.c            # Benchmarking harness (223 lines)
+â”œâ”€â”€ tokenizer.c                  # UTF-8 tokenizer with encode/decode (186 lines)
+â”œâ”€â”€ Data_Training/               # Training datasets
+â”œâ”€â”€ Math_ASM/                    # Assembly experiments (AVX)
+â”œâ”€â”€ UI_CSharp/                   # Optional C# manager UI
+â””â”€â”€ scripts/                     # Build & automation
+    â”œâ”€â”€ build_gcc.sh             # GCC/Clang build (Linux/macOS)
+    â”œâ”€â”€ build_msvc.ps1           # MSVC build (Windows)
+    â””â”€â”€ niyah.ps1                # Unified PowerShell wrapper
 Total codebase: ~4,750 lines of C11 (excluding tests embedded in source).
 
 Building
