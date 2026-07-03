@@ -33,3 +33,8 @@ upgrade_and_deploy.sh
 release_package/
 kspike-win-x64.zip
 kspike/target/
+
+# Ignore build artifacts and release packages
+/release_package/
+*.zip
+/kspike/target/
