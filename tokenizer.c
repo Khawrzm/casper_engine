@@ -157,7 +157,6 @@ char *tokenizer_decode(const uint32_t *tokens, uint32_t n) {
 }
 
 void tokenizer_free(void) { vocab_size = 0; }
-
 /* === TEST === */
 #ifdef TOKENIZER_TEST
 int main(void) {
