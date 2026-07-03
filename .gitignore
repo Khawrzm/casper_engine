@@ -29,3 +29,7 @@ test_proof
 deploy.sh
 upgrade_and_deploy.sh
 .hf_secret
+
+release_package/
+kspike-win-x64.zip
+kspike/target/
