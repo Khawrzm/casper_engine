@@ -1,0 +1,41 @@
+[package]
+name        = "kspike"
+version.workspace      = true
+edition.workspace      = true
+rust-version.workspace = true
+license.workspace      = true
+description = "KSpike CLI console"
+
+[[bin]]
+name = "kspike"
+path = "src/main.rs"
+
+[features]
+default  = ["strikers"]
+strikers = []
+
+[dependencies]
+kspike-core    = { path = "../kspike-core" }
+kspike-kernel  = { path = "../kspike-kernel" }
+kspike-judge   = { path = "../kspike-judge" }
+kspike-modules = { path = "../kspike-modules", features = ["all"] }
+clap               = { workspace = true }
+anyhow             = { workspace = true }
+tracing            = { workspace = true }
+tracing-subscriber = { workspace = true }
+serde_json         = { workspace = true }
+chrono             = { workspace = true }
+
+[dev-dependencies]
+kspike-niyah        = { path = "../kspike-niyah" }
+kspike-kforge       = { path = "../kspike-kforge" }
+kspike-haven        = { path = "../kspike-haven" }
+kspike-windows      = { path = "../kspike-windows" }
+kspike-casper-ffi   = { path = "../kspike-casper-ffi" }
+kspike-judge        = { path = "../kspike-judge" }
+kspike-core         = { path = "../kspike-core" }
+
+kspike-procfs   = { path = "../kspike-procfs" }
+kspike-auth-log = { path = "../kspike-auth-log" }
+kspike-ebpf-lsm = { path = "../kspike-ebpf-lsm" }
+kspike-kernel   = { path = "../kspike-kernel" }

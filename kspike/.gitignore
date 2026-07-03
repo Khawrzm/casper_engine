@@ -1,0 +1,12 @@
+target/
+Cargo.lock
+*.swp
+.DS_Store
+kspike-evidence.jsonl
+*.log
+.idea/
+.vscode/
+
+# Built C stub artifacts
+crates/kspike-casper-ffi/stub/libcasper.so
+crates/kspike-casper-ffi/stub/libcasper.dylib

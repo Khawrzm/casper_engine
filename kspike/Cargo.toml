@@ -1,0 +1,63 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/kspike-core",
+    "crates/kspike-khz",
+    "crates/kspike-kernel",
+    "crates/kspike-judge",
+    "crates/kspike-modules",
+    "crates/kspike-xdp-burp",
+    "crates/kspike-honeypot",
+    "crates/kspike-casper-ffi",
+    "crates/kspike-kforge",
+    "crates/kspike-procfs",
+    "crates/kspike-auth-log",
+    "crates/kspike-ebpf-lsm",
+    "crates/kspike-niyah",
+    "crates/kspike-windows",
+    "crates/kspike-haven",
+    "crates/kspike-daemon",
+    "crates/kspike-tui",
+    "crates/kspike-cli",
+]
+# The eBPF sub-crate under kspike-xdp-burp/bpf is built with a DIFFERENT
+# target (bpfel-unknown-none) and its own toolchain file. Exclude it from
+# the host workspace — it's invoked explicitly via its own `cargo build`.
+exclude = [
+    "crates/kspike-xdp-burp/bpf",
+    "crates/kspike-ebpf-lsm/bpf",
+]
+
+[workspace.package]
+version     = "0.1.0"
+edition     = "2021"
+rust-version = "1.75"
+authors     = ["Sulaiman Al-Shammari <admin@gratech.sa>", "GRA Tech Solutions"]
+license     = "Casper-Sovereign-1.0"
+repository  = "https://github.com/gratech/kspike"
+homepage    = "https://gratech.sa/kspike"
+description = "Dual-mode kernel defense & active-response framework — Casper-governed"
+keywords    = ["security", "kernel", "defense", "ebpf", "casper"]
+categories  = ["security"]
+
+[workspace.dependencies]
+serde      = { version = "1", features = ["derive"] }
+serde_json = "1"
+toml       = "0.8"
+anyhow     = "1"
+thiserror  = "1"
+tracing    = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+clap       = { version = "4", features = ["derive"] }
+chrono     = { version = "0.4", features = ["serde"] }
+blake3     = "1"
+ed25519-dalek = { version = "2", features = ["rand_core"] }
+rand       = "0.8"
+uuid       = { version = "1", features = ["v4", "serde"] }
+
+[profile.release]
+opt-level     = 3
+lto           = "fat"
+codegen-units = 1
+strip         = true
+panic         = "abort"
