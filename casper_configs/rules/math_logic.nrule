@@ -1,0 +1,9 @@
+{
+    "rule_id": "MATH_CONSISTENCY_01",
+    "constraints": [
+        "DIVIDE_BY_ZERO: FORBIDDEN",
+        "PROBABILITY_RANGE: [0, 1]",
+        "SET_THEORY: elements must belong to the defined universe"
+    ],
+    "fallback": "KhzJudge_Validation"
+}

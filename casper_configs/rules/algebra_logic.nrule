@@ -1,0 +1,10 @@
+{
+    "rule_id": "ALGEBRA_AXIOM_01",
+    "domain": "Abstract_Algebra",
+    "constraints": [
+        "IF context contains 'group' THEN verify (identity_element AND associativity)",
+        "IF operation is 'non-commutative' THEN reject (a*b == b*a)"
+    ],
+    "logic_gate": "STRICT_SYMBOLIC",
+    "enforcement_level": "CRITICAL"
+}
