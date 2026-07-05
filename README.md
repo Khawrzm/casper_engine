@@ -1,6 +1,6 @@
 # Casper Sovereign Engine (SIMD Optimized)
 
-Casper is a high-performance, C++17 inference engine designed for sovereign deployment of LLMs (specifically Llama-3.1-8B). It utilizes AVX2/FMA hardware acceleration to achieve near-native throughput with zero Python overhead during the inference loop.
+Casper is a high-performance, C++17 inference engine designed for sovereign deployment of LLMs . It utilizes AVX2/FMA hardware acceleration to achieve near-native throughput with zero Python overhead during the inference loop.
 
 ## Technical Architecture
 - **Core Engine:** Written in C++17 with raw pointer memory management.
